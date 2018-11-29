@@ -17,24 +17,24 @@ search: true
 
 # Introduction
 
-본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.
+본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.  
 본 문서에서 다루고 있는 API 의 종류는
 
-* LG U+ NLP 
+* LG U+ NLP   
 LG U+ Engine
-* Phoneme Embedding
+* Phoneme Embedding  
 음소 임베딩
-* Error Detection
+* Error Detection  
 보정 대상 문장 검출 모델
-* Error Correction
+* Error Correction  
   * 날씨 Retrieval 
-  날씨 도메인의 오류 문장을 정답 셋의 유사 발화를 Retrieval 하여 보정
+  날씨 도메인의 오류 문장을 정답 셋의 유사 발화를 Retrieval 하여 보정  
   * 음악 Retrieval
-  개체명 오인식에 포커싱하고 부분 보정 방식, 오류 단어를 개체명 사전의 유사 단어를 Retrieval 하여 보정
+  개체명 오인식에 포커싱하고 부분 보정 방식, 오류 단어를 개체명 사전의 유사 단어를 Retrieval 하여 보정  
   * 음악 Generative
-  Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용
+  Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용  
   * 전체 치환 Dictionary
-  사전(Dictionary) 기반 보정으로, 사전에 등록된 문장과 정확히 일치하면 보정
+  사전(Dictionary) 기반 보정으로, 사전에 등록된 문장과 정확히 일치하면 보정  
 * Integrated Simulator
 Detection과 Correction 통합 Simulator
 
