@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>LG U+ STT Post Correction API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,8 +211,6 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -228,8 +226,23 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lg-u-nlp" class="toc-h2 toc-link" data-title="LG U+ NLP">LG U+ NLP</a>
+                  </li>
+                  <li>
+                    <a href="#phoneme-embedding" class="toc-h2 toc-link" data-title="Phoneme Embedding">Phoneme Embedding</a>
+                  </li>
+                  <li>
+                    <a href="#error-detection" class="toc-h2 toc-link" data-title="Error Detection">Error Detection</a>
+                  </li>
+                  <li>
+                    <a href="#error-correction" class="toc-h2 toc-link" data-title="Error Correction">Error Correction</a>
+                  </li>
+                  <li>
+                    <a href="#integrated-simulator" class="toc-h2 toc-link" data-title="Integrated Simulator">Integrated Simulator</a>
+                  </li>
                   <li>
                     <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
                   </li>
@@ -254,43 +267,35 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>안녕하세영
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.
+본 문서에서 다루고 있는 API 의 종류는</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<ul>
+<li>LG U+ NLP 
+LG U+ Engine</li>
+<li>Phoneme Embedding
+음소 임베딩</li>
+<li>Error Detection
+보정 대상 문장 검출 모델</li>
+<li>Error Correction
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<ul>
+<li>날씨 Retrieval 
+날씨 도메인의 오류 문장을 정답 셋의 유사 발화를 Retrieval 하여 보정</li>
+<li>음악 Retrieval
+개체명 오인식에 포커싱하고 부분 보정 방식, 오류 단어를 개체명 사전의 유사 단어를 Retrieval 하여 보정</li>
+<li>음악 Generative
+Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용</li>
+<li>전체 치환 Dictionary
+사전(Dictionary) 기반 보정으로, 사전에 등록된 문장과 정확히 일치하면 보정</li>
+</ul></li>
+<li>Integrated Simulator
+Detection과 Correction 통합 Simulator</li>
+</ul>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'hoduhoduhodu'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>입니다.
+해당 API 에 대해서, 다루고 있는 언어는 JavaScript, Python 입니다. Code example은 오른쪽의 어두운 부분에서 확일할 수 있으며 오른쪽 상단의 탭에서 언어를 바꿀 수 있습니다.</p>
+<h1 id='authentication'>Authentication</h1><h1 id='api'>API</h1><h2 id='lg-u-nlp'>LG U+ NLP</h2><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='phoneme-embedding'>Phoneme Embedding</h2><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='error-detection'>Error Detection</h2><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='error-correction'>Error Correction</h2><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h3 id='retrieval'>날씨 Retrieval</h3><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h3 id='retrieval-2'>음악 Retrieval</h3><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h3 id='generative'>음악 Generative</h3><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h3 id='dictionary'>전체 치환 Dictionary</h3><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='integrated-simulator'>Integrated Simulator</h2><pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
@@ -495,8 +500,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
