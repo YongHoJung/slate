@@ -1,9 +1,7 @@
 ---
-title: API Reference
+title: LG U+ STT Post Correction API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
   - python
   - javascript
 
@@ -19,54 +17,104 @@ search: true
 
 # Introduction
 
-안녕하세영
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.
+본 문서에서 다루고 있는 API 의 종류는
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+* LG U+ NLP 
+LG U+ Engine
+* Phoneme Embedding
+음소 임베딩
+* Error Detection
+보정 대상 문장 검출 모델
+* Error Correction
+  * 날씨 Retrieval 
+  날씨 도메인의 오류 문장을 정답 셋의 유사 발화를 Retrieval 하여 보정
+  * 음악 Retrieval
+  개체명 오인식에 포커싱하고 부분 보정 방식, 오류 단어를 개체명 사전의 유사 단어를 Retrieval 하여 보정
+  * 음악 Generative
+  Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용
+  * 전체 치환 Dictionary
+  사전(Dictionary) 기반 보정으로, 사전에 등록된 문장과 정확히 일치하면 보정
+* Integrated Simulator
+Detection과 Correction 통합 Simulator
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+입니다.
+해당 API 에 대해서, 다루고 있는 언어는 JavaScript, Python 입니다. Code example은 오른쪽의 어두운 부분에서 확일할 수 있으며 오른쪽 상단의 탭에서 언어를 바꿀 수 있습니다.
 
 # Authentication
 
-> To authorize, use this code:
+# API
 
-```ruby
-require 'kittn'
+## LG U+ NLP
 
-api = Kittn::APIClient.authorize!('hoduhoduhodu')
+```javascript
 ```
 
 ```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
 ```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+## Phoneme Embedding
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+```python
+```
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+## Error Detection
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+```javascript
+```
 
-`Authorization: meowmeowmeow`
+```python
+```
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+## Error Correction
 
-# Kittens
+```javascript
+```
+
+```python
+```
+
+### 날씨 Retrieval
+
+```javascript
+```
+
+```python
+```
+
+### 음악 Retrieval
+
+```javascript
+```
+
+```python
+```
+
+### 음악 Generative
+
+```javascript
+```
+
+```python
+```
+
+### 전체 치환 Dictionary
+
+```javascript
+```
+
+```python
+```
+
+## Integrated Simulator
+
+```javascript
+```
+
+```python
+```
 
 ## Get All Kittens
 
