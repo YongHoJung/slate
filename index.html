@@ -283,20 +283,20 @@ LG U+ Engine</li>
 <ul>
 <li>날씨 Retrieval<br>
 날씨 도메인의 오류 문장을 정답 셋의 유사 발화를 Retrieval 하여 보정<br></li>
-<li>음악 Retrieval
+<li>음악 Retrieval<br>
 개체명 오인식에 포커싱하고 부분 보정 방식, 오류 단어를 개체명 사전의 유사 단어를 Retrieval 하여 보정<br></li>
-<li>음악 Generative
+<li>음악 Generative<br>
 Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용<br></li>
-<li>전체 치환 Dictionary
+<li>전체 치환 Dictionary<br>
 사전(Dictionary) 기반 보정으로, 사전에 등록된 문장과 정확히 일치하면 보정<br></li>
 </ul></li>
-<li>Integrated Simulator<br></li>
+<li>Integrated Simulator<br>
+Detection과 Correction 통합 Simulator</li>
 </ul>
 
-<p>Detection과 Correction 통합 Simulator</p>
+<p>입니다.</p>
 
-<p>입니다.
-해당 API 에 대해서, 다루고 있는 언어는 JavaScript, Python 입니다. Code example은 오른쪽의 어두운 부분에서 확일할 수 있으며 오른쪽 상단의 탭에서 언어를 바꿀 수 있습니다.</p>
+<p>해당 API 에 대해서, 다루고 있는 언어는 JavaScript, Python 입니다. Code example은 오른쪽의 어두운 부분에서 확일할 수 있으며 오른쪽 상단의 탭에서 언어를 바꿀 수 있습니다.</p>
 <h1 id='authentication'>Authentication</h1><h1 id='api'>API</h1><h2 id='lg-u-nlp'>LG U+ NLP</h2>
 <p>LGU+ NLP Engine. 의도 분석 기능 제공.</p>
 
@@ -305,18 +305,17 @@ Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용<br></li>
 <li>개발서버 NLP 엔진을 연결시켜 NER 사전이 올해 초 이후 업데이트 안 되어 있어 결과 분석시 고려 필요</li>
 </ul>
 <pre class="highlight javascript tab-javascript"><code></code></pre><pre class="highlight python tab-python"><code></code></pre><h2 id='p2v_snn_music_encoder-api'>p2v_snn_music_encoder API</h2>
-<p>입력 word 를 PhonemeEmbedding 화 하고, 미리 학습된 p2v_snn_music_encoder 를 사용해서 벡터를 얻고,</p>
+<p>입력 word 를 Phoneme Embedding 화 하고, 미리 학습된 p2v_snn_music_encoder 를 사용해서 벡터를 얻고,</p>
 
 <p>해당 벡터를 사용해서 기존의 가지고 있었던 NER 사전과 가장 유사한 벡터를 출력</p>
 <h3 id='http-request'>HTTP Request</h3>
-<blockquote>
-<p>POST, http://13.209.114.137:3001/stt-pc/api/p2v_ifs/v0.1
+<p><code>
+POST, http://13.209.114.137:3001/stt-pc/api/p2v_ifs/v0.1
 JSON, 
 {
     &#39;word&#39; : &#39;트이아스&#39;,
     &#39;threshold&#39;:0.99
-} </p>
-</blockquote>
+}</code></p>
 <h4 id='parameter-description'>Parameter Description</h4>
 <table><thead>
 <tr>
