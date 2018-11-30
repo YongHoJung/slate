@@ -309,19 +309,25 @@ Detection과 Correction 통합 Simulator</li>
 
 <p>해당 벡터를 사용해서 기존의 가지고 있었던 NER 사전과 가장 유사한 벡터를 출력</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST, http://13.209.114.137:3001/stt-pc/api/p2v_ifs/v0.1</code>
-<code>JSON,</code>
-<code>{</code>
-<code>&#39;word&#39; : &#39;트이아스&#39;,</code>
-<code>&#39;threshold&#39;:0.99</code>
-<code>}</code></p>
-<h4 id='parameter-description'>Parameter Description</h4>
+<p><code>
+POST, http://13.209.114.137:3001/stt-pc/api/p2v_ifs/v0.1
+JSON, 
+{
+    &#39;word&#39; : &#39;트이아스&#39;,
+    &#39;threshold&#39;:0.99
+}
+</code></p>
+
 <table><thead>
 <tr>
-<th>word</th>
-<th>오류 NER 단어</th>
+<th>Parameter</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>word</td>
+<td>오류 NER 단어</td>
+</tr>
 <tr>
 <td>threshold</td>
 <td>해당 threshold 를 넘는 벡터를 정답으로 출력</td>
@@ -338,12 +344,12 @@ Detection과 Correction 통합 Simulator</li>
     &#39;elapsedTime&#39;:
 }</p>
 </blockquote>
-<h4 id='parameter-description-2'>Parameter Description</h4>
-<p>------|------
+
+<p>Parameter Description
+------|------
 ifs_result | 가장 유사한 topN 개 단어
 find_ans   | classification을 통해서 추출된 정답 개수
 word | 오류 NER 단어
-------|------
 threshold | 해당 threshold 를 넘는 벡터를 정답으로 출력</p>
 
 <p>1) 비학습 버전 : g2p converter, p2v converter 사용 
