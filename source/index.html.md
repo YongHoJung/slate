@@ -228,7 +228,8 @@ total_result | 보정 결과 문장
 ### 음악 Retrieval
 
 ```http
- GET /stt-err-chkr/api/v0.1/correction/music?q={q}
+
+  GET /stt-err-chkr/api/v0.1/correction/music?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -286,7 +287,8 @@ threshold | 해당 threshold 를 넘는 벡터를 정답으로 출력
 ### 음악 Generative
 
 ```http
- GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
+
+  GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
