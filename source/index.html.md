@@ -56,9 +56,6 @@ Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
 
-# device : device 번호
-# query : NLP 입력
-
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
 {
