@@ -109,8 +109,6 @@ Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
 
-#q : phoneme embedding 입력, ex) 숙대머리
-
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
 {
