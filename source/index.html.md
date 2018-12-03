@@ -51,7 +51,7 @@ LG U+ NLP Engine 테스트 및 결과 출력
 
 
 ```http
-GET /nlp?device={device}&query={query} HTTP/1.1
+ GET /nlp?device={device}&query={query} HTTP/1.1
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -107,7 +107,7 @@ query | LG U+ NLP Engine에 입력할 단어
 
 
 ```http
-GET /stt-err-chkr/api/v0.1/phn2vec?q={q}
+ GET /stt-err-chkr/api/v0.1/phn2vec?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -187,7 +187,7 @@ non_deep | p2v_snn_music_encoder를 거치지 않은 Phoneme Embedding 만으로
 ### 날씨 Retrieval
 
 ```http
-GET /stt-err-chkr/api/v0.1/correction/weather?q={q}
+ GET /stt-err-chkr/api/v0.1/correction/weather?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -228,7 +228,7 @@ total_result | 보정 결과 문장
 ### 음악 Retrieval
 
 ```http
-GET /stt-err-chkr/api/v0.1/correction/music?q={q}
+ GET /stt-err-chkr/api/v0.1/correction/music?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -286,7 +286,7 @@ threshold | 해당 threshold 를 넘는 벡터를 정답으로 출력
 ### 음악 Generative
 
 ```http
-GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
+ GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -329,7 +329,7 @@ elapsedTime | 보정 모델의 소요 시간
 ### 전체 치환 Dictionary
 
 ```http
-/api/v0.1/correction/dictionary?q={q}
+ GET /api/v0.1/correction/dictionary?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
