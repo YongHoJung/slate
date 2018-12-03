@@ -18,7 +18,7 @@ search: true
 
 # Introduction
  
- v01
+ v02
 본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.  
  
 본 문서에서 다루고 있는 API 의 종류는
