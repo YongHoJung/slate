@@ -284,7 +284,7 @@ Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용<br></li>
 </ul>
 
 <p>해당 API 에 대해서, 다루고 있는 언어는 JavaScript, Python 입니다. Code example은 오른쪽의 어두운 부분에서 확일할 수 있으며 오른쪽 상단의 탭에서 언어를 바꿀 수 있습니다.</p>
-<h1 id='authentication'>Authentication</h1><h1 id='api'>API</h1><h2 id='lg-u-nlp-api'>LG U+ NLP API</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/nlp?device={device}&amp;query={query}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h1 id='authentication'>Authentication</h1><h1 id='api'>API</h1><h2 id='lg-u-nlp-api'>LG U+ NLP API</h2><pre class="highlight http tab-http"><code><span class="err"> </span><span class="nf">GET</span> <span class="nn">/nlp?device={device}&amp;query={query}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">13.209.114.137:4242 </span>
@@ -340,7 +340,7 @@ Content-Type: text/html; charset=utf-8
 <td>LG U+ NLP Engine에 입력할 단어</td>
 </tr>
 </tbody></table>
-<h2 id='phoneme-embedding-api'>Phoneme Embedding API</h2><pre class="highlight http tab-http"><code><span class="err">GET /stt-err-chkr/api/v0.1/phn2vec?q={q}
+<h2 id='phoneme-embedding-api'>Phoneme Embedding API</h2><pre class="highlight http tab-http"><code><span class="err"> GET /stt-err-chkr/api/v0.1/phn2vec?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -433,7 +433,7 @@ Host: 13.209.114.137:4242
 <h2 id='error-detection'>Error Detection</h2>
 <p>보정 대상 문장을 검출하는 모델로, CNN 분류 모델로 학습.
 도메인별로 학습된 2개의 이진 분류 모델을 이용하여, &#39;날씨 보정 대상, &#39;음악 보정 대상&#39;, &#39;그 외&#39; 의 3가지 클래스로 분류</p>
-<h2 id='error-correction'>Error Correction</h2><h3 id='retrieval'>날씨 Retrieval</h3><pre class="highlight http tab-http"><code><span class="err">GET /stt-err-chkr/api/v0.1/correction/weather?q={q}
+<h2 id='error-correction'>Error Correction</h2><h3 id='retrieval'>날씨 Retrieval</h3><pre class="highlight http tab-http"><code><span class="err"> GET /stt-err-chkr/api/v0.1/correction/weather?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -496,7 +496,7 @@ Host: 13.209.114.137:4242
 <td>보정 결과 문장</td>
 </tr>
 </tbody></table>
-<h3 id='retrieval-2'>음악 Retrieval</h3><pre class="highlight http tab-http"><code><span class="err">GET /stt-err-chkr/api/v0.1/correction/music?q={q}
+<h3 id='retrieval-2'>음악 Retrieval</h3><pre class="highlight http tab-http"><code><span class="err"> GET /stt-err-chkr/api/v0.1/correction/music?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -566,7 +566,7 @@ Host: 13.209.114.137:4242
 <td>해당 threshold 를 넘는 벡터를 정답으로 출력</td>
 </tr>
 </tbody></table>
-<h3 id='generative'>음악 Generative</h3><pre class="highlight http tab-http"><code><span class="err">GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
+<h3 id='generative'>음악 Generative</h3><pre class="highlight http tab-http"><code><span class="err"> GET /stt-err-chkr/api/v0.1/correction/music_g?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
@@ -616,7 +616,7 @@ Host: 13.209.114.137:4242
 <td>보정 모델의 소요 시간</td>
 </tr>
 </tbody></table>
-<h3 id='dictionary'>전체 치환 Dictionary</h3><pre class="highlight http tab-http"><code><span class="err">/api/v0.1/correction/dictionary?q={q}
+<h3 id='dictionary'>전체 치환 Dictionary</h3><pre class="highlight http tab-http"><code><span class="err"> GET /api/v0.1/correction/dictionary?q={q}
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
