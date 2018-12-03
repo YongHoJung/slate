@@ -292,6 +292,7 @@ Seq2Seq + Attention 모델을 사용해 Generative 방식을 사용<br></li>
 
   HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
+
 {
     resCode: "20000000",
     resultType: "ANALYSIS",
@@ -345,29 +346,30 @@ Host: 13.209.114.137:4242
 
  </span><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">O</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/html; charset=utf-8</span>
-<span class="s">{</span>
-<span class="s">    top1: "사랑의_트위스트",</span>
-<span class="s">    elapsedTime: 0.063131513,</span>
-<span class="s">    find_ans: false,</span>
-<span class="s">    ifs_result: [</span>
-<span class="s">        ["사랑의_트위스트", 0.987601101398468, 1]</span>
-<span class="s">        ["장나라의_스위트_드림", 0.9399498701095581, 0]</span>
-<span class="s">        ["트와이스의_낙낙", 0.9343534708023071, 0]</span>
-<span class="s">        ["사랑의_와이파이", 0.9306177496910095, 1]</span>
-<span class="s">        ["씨스타의_러빙유", 0.9259741902351379, 0]</span>
-<span class="s">        ["박보람의_애쓰지_마요", 0.9230177998542786, 0]</span>
-<span class="s">        ...</span>
-<span class="s">    ]</span>
-<span class="s">    non_deep:[ </span>
-<span class="s">        ["사랑의_트위스트", 0.966131329536438]</span>
-<span class="s">        ["사랑의_리퀘스트", 0.7753040790557861]</span>
-<span class="s">        ["설운도의_사랑의_트위스트", 0.701108455657959]</span>
-<span class="s">        ["아스트로의_사랑이", 0.6840652227401733]</span>
-<span class="s">        ["아기사랑_동요사랑_베스트", 0.6460648775100708]</span>
-<span class="s">        ["유승우의_서툰_사랑", 0.6335815191268921]</span>
-<span class="s">        ...</span>
-<span class="s">    ]</span>
-<span class="s">}</span>
+
+{
+    top1: "사랑의_트위스트",
+    elapsedTime: 0.063131513,
+    find_ans: false,
+    ifs_result: [
+        ["사랑의_트위스트", 0.987601101398468, 1]
+        ["장나라의_스위트_드림", 0.9399498701095581, 0]
+        ["트와이스의_낙낙", 0.9343534708023071, 0]
+        ["사랑의_와이파이", 0.9306177496910095, 1]
+        ["씨스타의_러빙유", 0.9259741902351379, 0]
+        ["박보람의_애쓰지_마요", 0.9230177998542786, 0]
+        ...
+    ]
+    non_deep:[ 
+        ["사랑의_트위스트", 0.966131329536438]
+        ["사랑의_리퀘스트", 0.7753040790557861]
+        ["설운도의_사랑의_트위스트", 0.701108455657959]
+        ["아스트로의_사랑이", 0.6840652227401733]
+        ["아기사랑_동요사랑_베스트", 0.6460648775100708]
+        ["유승우의_서툰_사랑", 0.6335815191268921]
+        ...
+    ]
+}
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">p2v_snn_music_encoder</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">ifs_config</span>
 <span class="kn">from</span> <span class="nn">p2v_snn_music_encoder</span> <span class="kn">import</span> <span class="n">inference</span> <span class="k">as</span> <span class="n">ifs_inference</span>
 
