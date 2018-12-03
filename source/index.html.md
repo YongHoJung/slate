@@ -18,6 +18,7 @@ search: true
 
 # Introduction
  
+ v01
 본 문서는 LG U+ STT 후보정 프로젝트에 사용된 API의 스펙과 사용법을 기술한 문서입니다.  
  
 본 문서에서 다루고 있는 API 의 종류는
@@ -51,12 +52,12 @@ LG U+ NLP Engine 테스트 및 결과 출력
 
 
 ```http
- GET /nlp?device={device}&query={query} HTTP/1.1
+  GET /nlp?device={device}&query={query} HTTP/1.1
 Accept: application/json
 User-Agent: Mozilla/5.0
 Host: 13.209.114.137:4242 
 
- HTTP/1.1 200 OK
+  HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
 {
     resCode: "20000000",
