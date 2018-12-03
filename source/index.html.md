@@ -59,6 +59,7 @@ Host: 13.209.114.137:4242
 
   HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
+
 {
     resCode: "20000000",
     resultType: "ANALYSIS",
@@ -112,6 +113,7 @@ Host: 13.209.114.137:4242
 
  HTTP/1.1 200 O
 Content-Type: text/html; charset=utf-8
+
 {
     top1: "사랑의_트위스트",
     elapsedTime: 0.063131513,
